@@ -183,11 +183,6 @@ const BookingForm: React.FC = () => {
               ← Agendar otro turno
             </button>
           </div>
-
-          <div className="mt-8 flex items-center justify-center gap-2 text-gray-300 font-bold text-[9px] uppercase tracking-widest">
-            <div className="w-3 h-3 border-2 border-gray-200 border-t-transparent rounded-full animate-spin"></div>
-            Abriendo WhatsApp...
-          </div>
         </div>
       </section>
     );
