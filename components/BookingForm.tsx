@@ -138,14 +138,9 @@ const BookingForm: React.FC = () => {
 
       if (insertError) throw insertError;
 
-      // 3. Success state
+      // 3. Success state and immediate redirection
       setSuccess(true);
-
-      setTimeout(() => {
-        sendWhatsAppBooking(formData, service, data.id);
-        // We don't reset success/step here anymore to let the user see the confirmation
-        // and have a manual button as fallback.
-      }, 2000);
+      sendWhatsAppBooking(formData, service);
 
     } catch (err: any) {
       console.error("Error saving appointment:", err);

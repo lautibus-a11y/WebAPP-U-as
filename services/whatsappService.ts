@@ -2,20 +2,18 @@
 import { Booking, Service } from '../types';
 import { BUSINESS_PHONE } from '../constants';
 
-export const sendWhatsAppBooking = (booking: Booking, service: Service, appointmentId?: string) => {
-  const idText = appointmentId ? `\n🆔 *Reserva ID:* ${appointmentId}` : '';
-
+export const sendWhatsAppBooking = (booking: Booking, service: Service) => {
   // Fixed: Property 'name' does not exist on type 'Service', using 'nombre' instead
-  const message = `¡Hola Bellezza! 👋 
-  
+  const message = `¡Hola Naomi! 👋 
+
 Acabo de reservar un turno a través de la web:
-  
-✨ *Servicio:* ${service.nombre}
+
+💅 *Servicio:* ${service.nombre}
 📅 *Fecha:* ${booking.date}
 ⏰ *Hora:* ${booking.time}
-👤 *Nombre:* ${booking.customerName}${idText}
+👤 *Nombre:* ${booking.customerName}
 
-¿Me confirman si está todo ok? 😊`;
+¿Me confirmás si está disponible? 😊`;
 
   const encodedMessage = encodeURIComponent(message);
 
