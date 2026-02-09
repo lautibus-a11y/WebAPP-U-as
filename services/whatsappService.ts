@@ -4,11 +4,11 @@ import { BUSINESS_PHONE } from '../constants';
 
 export const sendWhatsAppBooking = (booking: Booking, service: Service) => {
   // Fixed: Property 'name' does not exist on type 'Service', using 'nombre' instead
-  const message = `¡Hola Naomi! 👋 
+  const message = `¡Hola Naomi! 🌟 
 
 Acabo de reservar un turno a través de la web:
 
-💅 *Servicio:* ${service.nombre}
+✨ *Servicio:* ${service.nombre}
 📅 *Fecha:* ${booking.date}
 ⏰ *Hora:* ${booking.time}
 👤 *Nombre:* ${booking.customerName}
@@ -17,9 +17,8 @@ Acabo de reservar un turno a través de la web:
 
   const encodedMessage = encodeURIComponent(message);
 
-  // Usamos el formato oficial wa.me que es el que mejor procesan los celulares
-  // para mostrar un aviso de sistema limpio ("¿Abrir en WhatsApp?") en lugar del alerta técnico.
-  const url = `https://wa.me/${BUSINESS_PHONE}?text=${encodedMessage}`;
+  // Usamos el endpoint más estable de la API para evitar errores de codificación
+  const url = `https://api.whatsapp.com/send?phone=${BUSINESS_PHONE}&text=${encodedMessage}`;
 
   window.location.href = url;
 };

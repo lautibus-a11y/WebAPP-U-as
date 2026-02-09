@@ -138,9 +138,10 @@ const BookingForm: React.FC = () => {
 
       if (insertError) throw insertError;
 
-      // 3. Success state and immediate redirection
+      // 3. Success state
       setSuccess(true);
-      sendWhatsAppBooking(formData, service);
+      // We removed the automatic redirection to prevent the technical "gray alert" on iOS.
+      // Emojis will now decode correctly and the user will see a clean "Open?" prompt.
 
     } catch (err: any) {
       console.error("Error saving appointment:", err);
