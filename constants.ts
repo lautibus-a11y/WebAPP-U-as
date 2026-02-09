@@ -2,7 +2,7 @@
 import { Service, GalleryItem } from './types';
 
 export const BUSINESS_NAME = 'Bellezza byNaomi';
-export const BUSINESS_PHONE = '5491172023171';
+export const BUSINESS_PHONE = '5491161546312';
 
 export const SERVICES: Service[] = [];
 

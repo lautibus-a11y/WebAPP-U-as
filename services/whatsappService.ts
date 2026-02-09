@@ -19,11 +19,9 @@ Acabo de reservar un turno a través de la web:
 
   const encodedMessage = encodeURIComponent(message);
 
-  // Detect mobile to use the app protocol directly (bypasses browser landing page)
-  const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-  const url = isMobile
-    ? `whatsapp://send?phone=${BUSINESS_PHONE}&text=${encodedMessage}`
-    : `https://wa.me/${BUSINESS_PHONE}?text=${encodedMessage}`;
+  // Usamos el formato oficial wa.me que es el que mejor procesan los celulares
+  // para mostrar un aviso de sistema limpio ("¿Abrir en WhatsApp?") en lugar del alerta técnico.
+  const url = `https://wa.me/${BUSINESS_PHONE}?text=${encodedMessage}`;
 
   window.location.href = url;
 };
