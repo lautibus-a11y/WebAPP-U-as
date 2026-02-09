@@ -4,8 +4,6 @@ import { Service } from '../types.ts';
 import { SERVICES } from '../constants.ts';
 import { supabase } from '../lib/supabase.ts';
 
-const CATEGORIES = ['Todos', 'Manicuría', 'Podo estética', 'Cejas y pestañas'];
-
 const Services: React.FC = () => {
   const [services, setServices] = useState<Service[]>([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -16,6 +14,11 @@ const Services: React.FC = () => {
   const [showScrollHint, setShowScrollHint] = useState(true);
   const searchRef = useRef<HTMLDivElement>(null);
   const scrollContainerRef = useRef<HTMLDivElement>(null);
+
+  const categories = useMemo(() => {
+    const uniqueCategories = Array.from(new Set(services.map(s => s.categoria)));
+    return ['Todos', ...uniqueCategories.sort()];
+  }, [services]);
 
   useEffect(() => {
     const fetchServices = async () => {
@@ -182,7 +185,7 @@ const Services: React.FC = () => {
               onScroll={handleCategoryScroll}
               className="flex overflow-x-auto no-scrollbar gap-3 md:gap-4 px-6 md:px-0 pb-4 md:pb-0 scroll-smooth touch-pan-x"
             >
-              {CATEGORIES.map(cat => (
+              {categories.map(cat => (
                 <button
                   key={cat}
                   onClick={() => setSelectedCategory(cat)}

@@ -351,11 +351,19 @@ const Dashboard: React.FC<DashboardProps> = ({ onLogout }) => {
                   <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-2">Categoría</label>
-                      <select name="categoria" defaultValue={editingItem?.categoria || 'Manicuria'} className="w-full p-5 bg-gray-50 rounded-2xl outline-none focus:bg-white focus:ring-2 focus:ring-[#C5A059]/20 font-bold appearance-none">
-                        <option value="Manicuria">Manicuria</option>
-                        <option value="Podoestética">Podoestética</option>
-                        <option value="Cejas y Pestañas">Cejas y Pestañas</option>
-                      </select>
+                      <input
+                        name="categoria"
+                        defaultValue={editingItem?.categoria || ''}
+                        list="service-categories"
+                        placeholder="Ej: Manicuria"
+                        required
+                        className="w-full p-5 bg-gray-50 rounded-2xl outline-none focus:bg-white focus:ring-2 focus:ring-[#C5A059]/20 font-bold"
+                      />
+                      <datalist id="service-categories">
+                        {Array.from(new Set(services.map(s => s.categoria))).map(cat => (
+                          <option key={cat} value={cat} />
+                        ))}
+                      </datalist>
                     </div>
                     <div className="space-y-2">
                       <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400 ml-2">Duración</label>
