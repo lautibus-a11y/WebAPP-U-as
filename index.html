@@ -1,0 +1,167 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bellezza byNaomi - Estética de Uñas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-pink: #FBCACA;
+            --color-gold: #C5A059;
+            --color-black: #1A1A1A;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: var(--color-pink);
+            color: var(--color-black);
+            overflow-x: hidden;
+        }
+        h1, h2, h3, .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+        .bg-bellezza-pink { background-color: var(--color-pink); }
+        .text-bellezza-gold { color: var(--color-gold); }
+        .border-bellezza-gold { border-color: var(--color-gold); }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .animate-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        @keyframes bounce-x {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(6px); }
+        }
+        .animate-bounce-x {
+            animation: bounce-x 1.5s ease-in-out infinite;
+        }
+
+        @keyframes float-heart {
+            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.8; }
+            90% { opacity: 0.8; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+        .heart-particle {
+            position: absolute;
+            pointer-events: none;
+            z-index: 1;
+            animation: float-heart linear infinite;
+            color: var(--color-gold);
+            filter: drop-shadow(0 0 3px rgba(197, 160, 89, 0.5));
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-33.33333%); }
+        }
+        .animate-marquee {
+            animation: marquee 60s linear infinite;
+        }
+        .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        .glass-nav {
+            background: rgba(251, 202, 202, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        /* Rediseño de Botones Modernos */
+        .btn-premium-gold {
+            background: linear-gradient(90deg, #C5A059 0%, #d4b884 50%, #C5A059 100%);
+            background-size: 200% auto;
+            color: white;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
+        }
+        .btn-premium-gold:hover {
+            background-position: right center;
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 12px 20px rgba(197, 160, 89, 0.3);
+        }
+        .btn-premium-gold:active {
+            transform: translateY(-1px) scale(0.98);
+        }
+
+        .btn-outline-gold {
+            border: 1.5px solid rgba(197, 160, 89, 0.4);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(5px);
+            transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .btn-outline-gold:hover {
+            border-color: var(--color-gold);
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .btn-nav-minimal {
+            border: 1px solid var(--color-gold);
+            color: var(--color-gold);
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+        .btn-nav-minimal:hover {
+            background: var(--color-gold);
+            color: white;
+            box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
+        }
+        
+        /* Custom scrollbar for desktop */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-pink);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-gold);
+            border-radius: 10px;
+        }
+
+        /* Ocultar scrollbar en carrusel de categorías */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        
+        .instagram-btn {
+            background: white;
+            color: #1a1a1a;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@supabase/supabase-js": "https://esm.sh/@supabase/supabase-js@2.48.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-bellezza-pink text-gray-900">
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
