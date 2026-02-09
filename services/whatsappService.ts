@@ -18,6 +18,7 @@ Acabo de reservar un turno a través de la web:
 ¿Me confirman si está todo ok? 😊`;
 
   const encodedMessage = encodeURIComponent(message);
+  // Official "WhatsApp Me" (wa.me) format for direct chat
   const url = `https://wa.me/${BUSINESS_PHONE}?text=${encodedMessage}`;
 
   // Use location.href for better mobile compatibility (avoids popup blockers)
