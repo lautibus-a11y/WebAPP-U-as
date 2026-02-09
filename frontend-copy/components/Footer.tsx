@@ -22,10 +22,10 @@ const Footer: React.FC = () => {
             <span className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mt-1">byNaomi</span>
           </div>
           <p className="text-sm leading-relaxed max-w-xs mt-6">
-            Tu santuario de belleza para manos y pies en el corazón de Palermo. El arte de cuidar tus manos con elegancia.
+            Tu santuario de belleza para manos y pies en el corazón de 20 de Junio. El arte de cuidar tus manos con elegancia.
           </p>
         </div>
-        
+
         <div>
           <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Navegación</h4>
           <ul className="space-y-3 text-sm">
@@ -34,8 +34,8 @@ const Footer: React.FC = () => {
             <li><a href="#galeria" onClick={(e) => scrollTo(e, 'galeria')} className="hover:text-[#C5A059] transition-colors">Galería</a></li>
             <li><a href="#turnos" onClick={(e) => scrollTo(e, 'turnos')} className="hover:text-[#C5A059] transition-colors">Reservar</a></li>
             <li className="pt-2 border-t border-gray-800">
-              <a 
-                href="#admin" 
+              <a
+                href="#admin"
                 onClick={goToAdmin}
                 className="hover:text-[#C5A059] transition-colors flex items-center gap-2 text-gray-500 group"
               >
@@ -52,12 +52,12 @@ const Footer: React.FC = () => {
           <h4 className="text-white font-bold mb-6 uppercase text-xs tracking-widest">Contacto</h4>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-[#C5A059]" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z"/></svg>
+              <svg className="w-4 h-4 text-[#C5A059]" fill="currentColor" viewBox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" /></svg>
               +54 9 11 6154-6312
             </li>
             <li className="flex items-center gap-2">
-              <svg className="w-4 h-4 text-[#C5A059]" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"/></svg>
-              Palermo, Buenos Aires
+              <svg className="w-4 h-4 text-[#C5A059]" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" /></svg>
+              20 de Junio, Buenos Aires
             </li>
           </ul>
         </div>

@@ -22,7 +22,7 @@ const Footer: React.FC = () => {
             <span className="text-[10px] uppercase tracking-[0.3em] text-white font-bold mt-1">byNaomi</span>
           </div>
           <p className="text-sm leading-relaxed max-w-xs mt-6">
-            Tu santuario de belleza para manos y pies en el corazón de Palermo. El arte de cuidar tus manos con elegancia.
+            Tu santuario de belleza para manos y pies en el corazón de 20 de Junio. El arte de cuidar tus manos con elegancia.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex items-center gap-2">
               <svg className="w-4 h-4 text-[#C5A059]" fill="currentColor" viewBox="0 0 20 20"><path d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" /></svg>
-              Palermo, Buenos Aires
+              20 de Junio, Buenos Aires
             </li>
           </ul>
         </div>
