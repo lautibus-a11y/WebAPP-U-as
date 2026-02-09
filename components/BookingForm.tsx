@@ -143,11 +143,9 @@ const BookingForm: React.FC = () => {
 
       setTimeout(() => {
         sendWhatsAppBooking(formData, service, data.id);
-        setStep(1);
-        setFormData({ serviceId: '', date: '', time: '', customerName: '' });
-        setSuccess(false);
-        setIsSubmitting(false);
-      }, 1800);
+        // We don't reset success/step here anymore to let the user see the confirmation
+        // and have a manual button as fallback.
+      }, 2000);
 
     } catch (err: any) {
       console.error("Error saving appointment:", err);
@@ -158,17 +156,40 @@ const BookingForm: React.FC = () => {
 
   if (success) {
     return (
-      <section className="py-32 bg-[#FBCACA] flex items-center justify-center min-h-[600px]">
-        <div className="bg-white rounded-[40px] p-12 text-center shadow-2xl animate-in zoom-in duration-500 max-w-md mx-6">
+      <section className="py-24 md:py-32 bg-[#FBCACA] flex items-center justify-center min-h-[600px] px-6">
+        <div className="bg-white rounded-[40px] p-8 md:p-12 text-center shadow-2xl animate-in zoom-in duration-500 max-w-md w-full">
           <div className="w-20 h-20 bg-green-100 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
             <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
           </div>
           <h2 className="text-3xl font-serif text-[#1A1A1A] mb-4">¡Turno Solicitado!</h2>
           <p className="text-gray-500 text-sm mb-8 leading-relaxed">
-            Tu reserva ha sido procesada con éxito.
+            Tu reserva ha sido procesada. Ahora vamos a WhatsApp para confirmar los detalles finales.
           </p>
-          <div className="flex items-center justify-center gap-2 text-[#C5A059] font-bold text-[10px] uppercase tracking-widest">
-            <div className="w-4 h-4 border-2 border-[#C5A059] border-t-transparent rounded-full animate-spin"></div>
+          <div className="flex flex-col gap-4">
+            <button
+              onClick={() => {
+                const service = services.find(s => String(s.id) === String(formData.serviceId));
+                if (service) sendWhatsAppBooking(formData, service);
+              }}
+              className="btn-premium-gold w-full py-5 rounded-full font-bold uppercase text-[10px] tracking-[0.2em] shadow-xl shadow-[#C5A059]/30"
+            >
+              Confirmar en WhatsApp
+            </button>
+
+            <button
+              onClick={() => {
+                setStep(1);
+                setFormData({ serviceId: '', date: '', time: '', customerName: '' });
+                setSuccess(false);
+              }}
+              className="text-[10px] font-bold uppercase tracking-widest text-gray-400 hover:text-[#C5A059] transition-colors py-2"
+            >
+              ← Agendar otro turno
+            </button>
+          </div>
+
+          <div className="mt-8 flex items-center justify-center gap-2 text-gray-300 font-bold text-[9px] uppercase tracking-widest">
+            <div className="w-3 h-3 border-2 border-gray-200 border-t-transparent rounded-full animate-spin"></div>
             Abriendo WhatsApp...
           </div>
         </div>
@@ -238,7 +259,7 @@ const BookingForm: React.FC = () => {
                       type="date"
                       required
                       min={new Date().toISOString().split('T')[0]}
-                      className="w-full pt-8 pb-4 px-5 rounded-2xl border-2 border-gray-100 bg-white focus:border-[#C5A059] focus:outline-none transition-all font-bold text-[#1A1A1A]"
+                      className="w-full pt-8 pb-4 px-5 rounded-2xl border-2 border-gray-100 bg-white focus:border-[#C5A059] focus:outline-none transition-all font-bold text-[#1A1A1A] text-base"
                       onChange={(e) => setFormData({ ...formData, date: e.target.value })}
                       value={formData.date}
                     />
@@ -304,7 +325,7 @@ const BookingForm: React.FC = () => {
                       type="text"
                       placeholder="Ej: Lucía Pérez"
                       required
-                      className="w-full pt-8 pb-4 px-5 rounded-2xl border-2 border-gray-100 bg-white focus:border-[#C5A059] focus:outline-none transition-all font-medium text-[#1A1A1A]"
+                      className="w-full pt-8 pb-4 px-5 rounded-2xl border-2 border-gray-100 bg-white focus:border-[#C5A059] focus:outline-none transition-all font-medium text-[#1A1A1A] text-base"
                       onChange={(e) => setFormData({ ...formData, customerName: e.target.value })}
                       value={formData.customerName}
                     />

@@ -152,7 +152,7 @@ const Services: React.FC = () => {
                   setShowSuggestions(true);
                 }}
                 onFocus={() => setShowSuggestions(true)}
-                className="w-full pl-14 pr-6 py-4 md:py-5 bg-[#FFF9F9] border-2 border-transparent focus:border-[#C5A059]/20 focus:bg-white rounded-[20px] md:rounded-[25px] outline-none transition-all duration-300 text-sm font-medium shadow-sm"
+                className="w-full pl-14 pr-6 py-4 md:py-5 bg-[#FFF9F9] border-2 border-transparent focus:border-[#C5A059]/20 focus:bg-white rounded-[20px] md:rounded-[25px] outline-none transition-all duration-300 text-base md:text-sm font-medium shadow-sm"
               />
             </div>
 

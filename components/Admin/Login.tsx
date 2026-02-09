@@ -53,7 +53,7 @@ const Login: React.FC<LoginProps> = ({ onBack }) => {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full p-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-[#C5A059] focus:outline-none transition-all text-sm font-medium"
+              className="w-full p-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-[#C5A059] focus:outline-none transition-all text-base font-medium"
               placeholder="admin@bellezza.com"
             />
           </div>
@@ -64,7 +64,7 @@ const Login: React.FC<LoginProps> = ({ onBack }) => {
               required
               value={pass}
               onChange={(e) => setPass(e.target.value)}
-              className="w-full p-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-[#C5A059] focus:outline-none transition-all text-sm font-medium"
+              className="w-full p-4 rounded-2xl bg-gray-50 border-2 border-transparent focus:bg-white focus:border-[#C5A059] focus:outline-none transition-all text-base font-medium"
               placeholder="••••••••"
             />
           </div>
