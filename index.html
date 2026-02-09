@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
@@ -8,13 +8,16 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
     <style>
         :root {
             --color-pink: #FBCACA;
             --color-gold: #C5A059;
             --color-black: #1A1A1A;
         }
+
         body {
             font-family: 'Inter', sans-serif;
             scroll-behavior: smooth;
@@ -22,36 +25,80 @@
             color: var(--color-black);
             overflow-x: hidden;
         }
-        h1, h2, h3, .font-serif {
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
             font-family: 'Playfair Display', serif;
         }
-        .bg-bellezza-pink { background-color: var(--color-pink); }
-        .text-bellezza-gold { color: var(--color-gold); }
-        .border-bellezza-gold { border-color: var(--color-gold); }
-        
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-8px); }
-            100% { transform: translateY(0px); }
+
+        .bg-bellezza-pink {
+            background-color: var(--color-pink);
         }
+
+        .text-bellezza-gold {
+            color: var(--color-gold);
+        }
+
+        .border-bellezza-gold {
+            border-color: var(--color-gold);
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+            100% {
+                transform: translateY(0px);
+            }
+        }
+
         .animate-float {
             animation: float 4s ease-in-out infinite;
         }
 
         @keyframes bounce-x {
-            0%, 100% { transform: translateX(0); }
-            50% { transform: translateX(6px); }
+
+            0%,
+            100% {
+                transform: translateX(0);
+            }
+
+            50% {
+                transform: translateX(6px);
+            }
         }
+
         .animate-bounce-x {
             animation: bounce-x 1.5s ease-in-out infinite;
         }
 
         @keyframes float-heart {
-            0% { transform: translateY(0) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 0.8;
+            }
+
+            90% {
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
         }
+
         .heart-particle {
             position: absolute;
             pointer-events: none;
@@ -62,12 +109,19 @@
         }
 
         @keyframes marquee {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-33.33333%); }
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-33.33333%);
+            }
         }
+
         .animate-marquee {
             animation: marquee 60s linear infinite;
         }
+
         .animate-marquee:hover {
             animation-play-state: paused;
         }
@@ -86,11 +140,13 @@
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             box-shadow: 0 4px 15px rgba(197, 160, 89, 0.2);
         }
+
         .btn-premium-gold:hover {
             background-position: right center;
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 12px 20px rgba(197, 160, 89, 0.3);
         }
+
         .btn-premium-gold:active {
             transform: translateY(-1px) scale(0.98);
         }
@@ -101,6 +157,7 @@
             backdrop-filter: blur(5px);
             transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
         }
+
         .btn-outline-gold:hover {
             border-color: var(--color-gold);
             background: white;
@@ -114,19 +171,22 @@
             background: transparent;
             transition: all 0.3s ease;
         }
+
         .btn-nav-minimal:hover {
             background: var(--color-gold);
             color: white;
             box-shadow: 0 0 15px rgba(197, 160, 89, 0.3);
         }
-        
+
         /* Custom scrollbar for desktop */
         ::-webkit-scrollbar {
             width: 8px;
         }
+
         ::-webkit-scrollbar-track {
             background: var(--color-pink);
         }
+
         ::-webkit-scrollbar-thumb {
             background: var(--color-gold);
             border-radius: 10px;
@@ -136,19 +196,97 @@
         .no-scrollbar::-webkit-scrollbar {
             display: none;
         }
+
         .no-scrollbar {
             -ms-overflow-style: none;
             scrollbar-width: none;
         }
-        
+
         .instagram-btn {
             background: white;
             color: #1a1a1a;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
+
+        /* Animaciones Cinemáticas Avanzadas */
+        @keyframes cinematic-reveal {
+            0% {
+                transform: translateY(30px) scale(0.95);
+                opacity: 0;
+                filter: blur(10px);
+            }
+
+            100% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+                filter: blur(0);
+            }
+        }
+
+        .animate-premium-reveal {
+            animation: cinematic-reveal 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+        }
+
+        @keyframes gold-glow {
+
+            0%,
+            100% {
+                filter: drop-shadow(0 0 5px rgba(197, 160, 89, 0.2));
+            }
+
+            50% {
+                filter: drop-shadow(0 0 25px rgba(197, 160, 89, 0.6));
+            }
+        }
+
+        .gold-glow-pulse {
+            animation: gold-glow 3s ease-in-out infinite;
+        }
+
+        @keyframes shine-gold {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .text-shine-v2 {
+            background: linear-gradient(to right,
+                    #1A1A1A 20%,
+                    #C5A059 40%,
+                    #f3e2c3 50%,
+                    #C5A059 60%,
+                    #1A1A1A 80%);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: #C5A059;
+            /* Fallback */
+            animation: shine-gold 4s linear infinite;
+        }
+
+        @keyframes float-gentle {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .animate-float-gentle {
+            animation: float-gentle 4s ease-in-out infinite;
+        }
     </style>
-<script type="importmap">
+    <script type="importmap">
 {
   "imports": {
     "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
@@ -158,10 +296,12 @@
   }
 }
 </script>
-<link rel="stylesheet" href="/index.css">
+    <link rel="stylesheet" href="/index.css">
 </head>
+
 <body class="bg-bellezza-pink text-gray-900">
     <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
 </body>
+
 </html>

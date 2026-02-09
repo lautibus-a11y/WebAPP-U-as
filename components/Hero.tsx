@@ -30,9 +30,9 @@ const Hero: React.FC = () => {
           </div>
 
           <div className="space-y-4 md:space-y-6">
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-9xl font-serif leading-[1] md:leading-[0.9] text-[#1A1A1A]">
-              Elegancia <br />
-              <span className="italic font-normal text-[#C5A059] md:ml-12">Total</span>
+            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-serif leading-[1.1] md:leading-[0.9] text-[#1A1A1A] animate-float-gentle text-center md:text-left">
+              <span className="inline-block animate-premium-reveal drop-shadow-sm" style={{ animationDelay: '0.1s' }}>Belleza</span>
+              <span className="inline-block italic font-normal text-shine-v2 animate-premium-reveal ml-4 md:ml-8" style={{ animationDelay: '0.4s' }}>Integral</span>
             </h1>
             <p className="text-[#1A1A1A]/70 text-base md:text-xl max-w-md leading-relaxed font-light">
               Descubrí el arte de la belleza avanzada. Diseños exclusivos y cuidado premium para uñas, pestañas y cejas.
